@@ -1,17 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// declaração de tipos
-interface Fone {
-    id: number;
-    numero: string;
-}
-
-interface Contato {
-  id: number;
-  nome: string;
-  fone: Fone;
-}
+import Contato from '../../models/contato';
 
 const ContatoList: React.FC = () => {
   const [contatos, setContatos] = useState<Contato[]>([]);
@@ -34,7 +24,9 @@ const ContatoList: React.FC = () => {
       <ul>
         {contatos.map(contato => (
           <li key={contato.id}>
-            {contato.nome} - {contato.fone.numero}
+            {contato.nome} 
+            - {contato.fone.numero} 
+            - {contato.email}
           </li>
         ))}
       </ul>
