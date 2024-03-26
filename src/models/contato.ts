@@ -1,20 +1,22 @@
-import Fone from './fone';
-import Endereco from './endereco';
 
-export default class Contato {
+export type Contato = {
 
-    constructor(
-        public id: number,
-        public nome: string,
-        public fone: Fone,
-        public email: string,
-        public endereco: Endereco
-    ) {
-        this.id = id;
-        this.nome = nome;
-        this.fone = fone;
-        this.email = email;
-        this.endereco = endereco;
-    }
+    id: number;
+    nome: string;
+    email: string;
+    fone: {
+        id: number;
+        numero: string;
+        tipoFone: string;
+    };
+    endereco: {
+        id: number;
+        logradouro: string;
+        numero: string;
+        bairro: string;
+        cidade: string;
+        estado: string;
+        cep: string;
+    };
 
-}
+};

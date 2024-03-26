@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Contato from '../../models/contato';
+import { Contato } from '../../models/contato';
 
 const ContatoList: React.FC = () => {
   const [contatos, setContatos] = useState<Contato[]>([]);
