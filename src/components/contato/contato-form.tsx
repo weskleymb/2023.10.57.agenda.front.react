@@ -54,7 +54,7 @@ const ContatoForm: React.FC<Props> = ({ onAddContato }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="form-group mb-3">
                 <label htmlFor="nome">Nome</label>
                 <input
                     type="text"
@@ -64,8 +64,8 @@ const ContatoForm: React.FC<Props> = ({ onAddContato }) => {
                     onChange={(evento) => setNome(evento.target.value)}
                 />
             </div>
-            <div className="form-group">
-                <label htmlFor="email">Email</label>
+            <div className="form-group mb-3">
+                <label htmlFor="email">E-mail</label>
                 <input
                     type="email"
                     className="form-control"
@@ -74,7 +74,7 @@ const ContatoForm: React.FC<Props> = ({ onAddContato }) => {
                     onChange={(evento) => setEmail(evento.target.value)}
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group mb-3">
                 <label htmlFor="numeroFone">Número do Telefone</label>
                 <input
                     type="text"
@@ -84,15 +84,15 @@ const ContatoForm: React.FC<Props> = ({ onAddContato }) => {
                     onChange={(evento) => setNumeroFone(evento.target.value)}
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group mb-3">
                 <label htmlFor="tipoFone">Tipo do Telefone</label>
-                <select id="tipoFone" onChange={(evento) => setTipoFone(evento.target.value)}>
+                <select id="tipoFone" className="form-select" onChange={(evento) => setTipoFone(evento.target.value)}>
                     <option value="CELULAR">Celular</option>
                     <option value="RESIDENCIAL">Residencial</option>
                     <option value="COMERCIAL">Comercial</option>
                 </select>
             </div>
-            <div className="form-group">
+            <div className="form-group mb-3">
                 <label htmlFor="logradouro">Logradouro</label>
                 <input
                     type="text"
@@ -102,7 +102,7 @@ const ContatoForm: React.FC<Props> = ({ onAddContato }) => {
                     onChange={(evento) => setLogradouro(evento.target.value)}
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group mb-3">
                 <label htmlFor="numeroEndereco">Número do Endereço</label>
                 <input
                     type="text"
