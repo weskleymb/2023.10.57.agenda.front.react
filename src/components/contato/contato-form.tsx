@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import { Contato } from "../../models/contato";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
     onAddContato: (contato: Contato) => void;
 }
 
 const ContatoForm: React.FC<Props> = ({ onAddContato }) => {
+
+    const navigate = useNavigate();
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -36,17 +39,9 @@ const ContatoForm: React.FC<Props> = ({ onAddContato }) => {
         };
         
         try {
-            console.log('newContato:', newContato);
             const resposta = await axios.post('http://localhost:8080/contatos', newContato);
             onAddContato(resposta.data);
-
-            // Limpa os campos do formulário
-            setNome('');
-            setEmail('');
-            setNumeroFone('');
-            setTipoFone('');
-            setLogradouro('');
-            setNumeroEndereco('');
+            navigate('/contatos');
         } catch (error) {
             console.error('Houve um erro ao salvar o contato:', error);
         }
