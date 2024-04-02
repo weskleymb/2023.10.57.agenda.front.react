@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { Contato } from '../../models/contato';
+import { Link } from 'react-router-dom';
 
 const ContatoList: React.FC = () => {
   const [contatos, setContatos] = useState<Contato[]>([]);
@@ -26,7 +27,10 @@ const ContatoList: React.FC = () => {
           <li key={contato.id}>
             {contato.nome} 
             - {contato.fone.numero} 
-            - {contato.email}
+            - {contato.email} 
+            - <Link to={`/contatos/${contato.id}`} className='btn btn-primary'>
+                Editar
+              </Link>
           </li>
         ))}
       </ul>
